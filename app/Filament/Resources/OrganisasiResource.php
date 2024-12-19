@@ -25,7 +25,7 @@ class OrganisasiResource extends Resource
     protected static ?string $navigationGroup = "Pemberkasan";
     protected static ?string $navigationLabel = "Struktur Organisasi Sekolah";
 
-    protected static ?string $navigationIcon = "heroicon-o-rectangle-stack";
+    protected static ?string $navigationIcon = "heroicon-m-cube-transparent";
 
     public static function form(Form $form): Form
     {
@@ -37,7 +37,7 @@ class OrganisasiResource extends Resource
                     ->required()
                     ->label("Posisi / Kedudukan"),
                 Select::make("jurusan_id")
-                    ->label("Jurusan")
+                    ->label("Jurusan ( tidak wajib )")
                     ->relationship("jurusan", "nama")
                     ->preload(),
                 FileUpload::make("foto")

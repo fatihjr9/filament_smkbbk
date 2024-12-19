@@ -51,6 +51,27 @@
                                     @endif
                                     transition-colors duration-300">Pengumuman
                                 </a>
+                                <button id="dropdownDelayButton-1" class="hover:text-red-800 hover:border-b-2 hover:border-red-800" data-dropdown-toggle="dropdownDelay-1" data-dropdown-delay="500" data-dropdown-trigger="hover" type="button">
+                                    Program Studi
+                                </button>
+                                <div id="dropdownDelay-1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                    <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDelayButton-1">
+                                        @php
+                                            $navJurusan = \App\Models\Jurusan::all(); // Mengambil data Jurusan
+                                        @endphp
+                                        @foreach ($navJurusan as $jurusan)
+                                            <li>
+                                                <a href="{{ route('jurusan-detail', $jurusan->nama) }}"
+                                                    class="@if(Route::currentRouteName() == 'jurusan-detail')
+                                                    text-red-800 block px-4 py-2 text-base
+                                                @else
+                                                    hover:text-red-800 hover:border-b-2 hover:border-red-800 block px-4 py-2 text-base hover:bg-gray-100
+                                                @endif
+                                                transition-colors duration-300">{{ $jurusan->nama }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 <button id="dropdownDelayButton" class="hover:text-red-800 hover:border-b-2 hover:border-red-800" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500" data-dropdown-trigger="hover" type="button">
                                     Lainnya
                                 </button>
@@ -145,31 +166,38 @@
                     </nav>
                 </section>
 
-                <main class="px-6 py-2">
+                <main class="px-6 py-2 mb-20">
                     {{ $slot }}
                 </main>
             </section>
-            <footer class="bg-white p-6">
-                <div class="w-full md:flex md:items-center md:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">SMK Bina Bangsa Kersana</a>. All Rights Reserved.
-                </span>
-                <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline">Contact</a>
-                    </li>
-                </ul>
+            <footer class="bg-slate-900 text-white">
+                <div class="w-full p-6 md:py-8">
+                    <div class=" grid grid-cols-4 items-start">
+                        <div class="flex flex-row items-center gap-x-2 lg:col-span-3">
+                            <img src="{{ asset('logo.png') }}" class="h-12" alt="Flowbite Logo" />
+                            <p class="text-lg font-bold">SMK Bina Bangsa Kersana</p>
+                        </div>
+                        <ul class="grid grid-cols-1 gap-y-2">
+                            <div class="flex flex-row items-start gap-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" px-3 py-1 h-10 w-16 rounded-full bg-slate-800">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+                                </svg>
+                                <a href="#" class="hover:underline text-slate-500 text-justify">Jl. Tanjung - Banjarharjo No.KM. 10, Kubangpari Satu, Kubangpari, Kec. Kersana, Kabupaten Brebes, Jawa Tengah 52264</a>
+                            </div>
+                            <div class="flex flex-row items-start gap-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" px-3 py-1 h-8 w-10 rounded-full bg-slate-800">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                </svg>
+                                <a href="#" class="hover:underline text-slate-500">(0283) 4582621</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <hr class="my-6 border-slate-800 sm:mx-auto lg:my-8" />
+                    <p class="text-sm text-gray-500 text-center">© 2024 SMK Bina Bangsa Kersana. All Rights Reserved.</p>
                 </div>
             </footer>
         </section>
+
         @stack('modals')
 
         @livewireScripts

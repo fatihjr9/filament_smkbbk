@@ -25,6 +25,11 @@ Route::get("/program-studi/{name}", [
     ClientController::class,
     "jurusanDetail",
 ])->name("jurusan-detail");
+Route::get("/pengumuman/{name}", [
+    ClientController::class,
+    "pengumumanDetail",
+])->name("pengumuman-detail");
+
 Route::get("/profil-sekolah", function () {
     return view("pages.profil");
 })->name("profil-index");

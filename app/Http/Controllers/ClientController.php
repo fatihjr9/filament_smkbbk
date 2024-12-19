@@ -21,6 +21,11 @@ class ClientController extends Controller
             ->firstOrFail();
         return view("pages.detail.jurusan", compact("data"));
     }
+    public function pengumumanDetail($name)
+    {
+        $data = Pengumuman::where("nama", $name)->firstOrFail();
+        return view("pages.detail.pengumuman", compact("data"));
+    }
     public function pengumuman(Request $request)
     {
         $search = $request->input("search");

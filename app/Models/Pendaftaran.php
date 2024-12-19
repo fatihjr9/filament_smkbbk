@@ -8,6 +8,8 @@ class Pendaftaran extends Model
     protected $fillable = [
         "tgl_daftar",
         "tingkat",
+        "asal_sekolah",
+        "alamat_asal_sekolah",
         "no_registrasi",
         "jurusan",
         "nama_siswa",

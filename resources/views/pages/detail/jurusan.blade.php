@@ -15,16 +15,25 @@
             </div>
         </div>
         <div class="lg:col-span-2">
-            <p class="text-justify text-lg">{!! $data->deskripsi !!}</p>
+            <p class="text-justify text-lg">{!! nl2br(e($data->deskripsi)) !!}</p>
+            @forelse ($data->organisasis as $organisasi)
+            <div class="flex flex-col space-y-2 mt-6">
+                <h5 class="text-xl font-bold">Pengajar yang mengampu</h5>
+                <div class="grid grid-cols-1 lg:grid-cols-3">
+                    <div class="relative flex flex-col h-fit rounded-xl overflow-hidden group border">
+                        <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 z-10 group-hover:from-red-600/50 group-hover:to-transparent transition-all duration-500"></div>
+                        <img class="w-full object-cover h-96 group-hover:scale-110 transition-all duration-1000 rounded-xl" src="{{ asset('storage/' . $organisasi->foto) }}" alt="Gambar {{ $organisasi->nama }}"/>
+                        <div class="flex flex-col px-6 py-4 absolute bottom-4 w-fit text-white z-20">
+                            <h5 class="text-xl font-bold">{{ $organisasi->nama }}</h5>
+                            <h5 class="font-medium mt-1">Jabatan : {{ $organisasi->posisi }}</h5>
+                            <h5 class="font-medium">NIDN    : {{ $organisasi->nidn }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @empty
+                <li>Tidak ada organisasi yang terkait dengan jurusan ini.</li>
+            @endforelse
         </div>
     </div>
-    @forelse ($data->organisasis as $organisasi)
-        <li>
-            <strong>Nama:</strong> {{ $organisasi->nama }} <br>
-            <strong>Posisi:</strong> {{ $organisasi->posisi }} <br>
-            <strong>NIDN:</strong> {{ $organisasi->nidn }}
-        </li>
-    @empty
-        <li>Tidak ada organisasi yang terkait dengan jurusan ini.</li>
-    @endforelse
 </x-client-layout>

@@ -19,7 +19,7 @@ class PendaftaranResource extends Resource
     protected static ?string $model = Pendaftaran::class;
     protected static ?string $navigationLabel = "Informasi PPDB";
     protected static ?string $navigationGroup = "Pemberkasan";
-    protected static ?string $navigationIcon = "heroicon-o-rectangle-stack";
+    protected static ?string $navigationIcon = "heroicon-o-document-text";
     public static function canCreate(): bool
     {
         return false;

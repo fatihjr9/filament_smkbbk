@@ -34,7 +34,7 @@ class WaGrupResource extends Resource
             Section::make("Grup Whatsapp")->schema([
                 TextInput::make("nama")->required()->label("Nama Grup"),
                 Select::make("jurusan")
-                    ->options(Jurusan::all()->pluck("nama", "id")->toArray())
+                    ->options(Jurusan::all()->pluck("nama")->toArray())
                     ->label("Jurusan"),
                 TextInput::make("link")->required()->label("Link"),
             ]),

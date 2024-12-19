@@ -39,6 +39,8 @@ class PendaftaranController extends Controller
         $waGrup = WaGrup::where("jurusan", $pendaftaran->jurusan)->first();
         $penyelenggara = Penyelenggara::latest()->first();
         $qrCode = null;
+        $waGrupLink = null;
+
         if ($waGrup) {
             $qrCode = base64_encode(
                 QrCode::format("png")
@@ -54,6 +56,7 @@ class PendaftaranController extends Controller
             "waGrupLink" => $waGrupLink,
             "penyelenggara" => $penyelenggara,
         ]);
+
         return $pdf->download("pendaftaran_" . $pendaftaran->id . ".pdf");
     }
     public function postRegistration(Request $request)
@@ -66,6 +69,8 @@ class PendaftaranController extends Controller
             "jurusan" => "required|string",
             // siswa
             "nama_siswa" => "required|string",
+            "asal_sekolah" => "required|string",
+            "alamat_asal_sekolah" => "required|string",
             "jenis_kelamin" => "required|string",
             "nisn" => "required|string",
             "nis" => "required|string",

@@ -13,27 +13,27 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\Textarea;
 
 class JurusanResource extends Resource
 {
     protected static ?string $model = Jurusan::class;
     protected static ?string $navigationGroup = "Profil Sekolah";
     protected static ?string $navigationLabel = "Program Keahlian";
-    protected static ?string $navigationIcon = "heroicon-o-rectangle-stack";
+    protected static ?string $navigationIcon = "heroicon-o-wrench-screwdriver";
 
     public static function form(Form $form): Form
     {
         return $form->schema([
             Section::make("Program keahlian")->schema([
                 TextInput::make("nama")->required()->label("Nama Jurusan"),
-                RichEditor::make("deskripsi")
+                Textarea::make("deskripsi")
                     ->required()
-                    ->label("Detail Jurusan"),
+                    ->label("Detail Program Studi"),
                 FileUpload::make("thumbnail")
                     ->image()
                     ->directory("Thumbnail-Jurusan")

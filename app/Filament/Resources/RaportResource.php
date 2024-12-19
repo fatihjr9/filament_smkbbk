@@ -22,16 +22,13 @@ class RaportResource extends Resource
     protected static ?string $model = Raport::class;
     protected static ?string $navigationGroup = "Dokumen Penilaian dan Guru";
     protected static ?string $navigationLabel = "Data Raport Siswa";
-    protected static ?string $navigationIcon = "heroicon-o-rectangle-stack";
+    protected static ?string $navigationIcon = "heroicon-o-book-open";
 
     public static function form(Form $form): Form
     {
         return $form->schema([
             Section::make("Data Raport Siswa")->schema([
-                TextInput::make("nama")
-                    ->required()
-                    ->label("Nama")
-                    ->searchable(),
+                TextInput::make("nama")->required()->label("Nama"),
                 FileUpload::make("file")
                     ->directory("file-raport")
                     ->required()
@@ -44,7 +41,9 @@ class RaportResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("nama"),
+                TextColumn::make("nama")
+                    ->label("Nama File Raport")
+                    ->searchable(),
                 TextColumn::make("file")
                     ->label("File")
                     ->url(

@@ -18,6 +18,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\Textarea;
 
 class PengumumanResource extends Resource
 {
@@ -25,14 +26,14 @@ class PengumumanResource extends Resource
     protected static ?string $navigationLabel = "Pengumuman";
     protected static ?string $navigationGroup = "Profil Sekolah";
 
-    protected static ?string $navigationIcon = "heroicon-o-rectangle-stack";
+    protected static ?string $navigationIcon = "heroicon-m-inbox-arrow-down";
 
     public static function form(Form $form): Form
     {
         return $form->schema([
             Section::make("Pengumuman")->schema([
                 TextInput::make("nama")->required()->label("Judul Pengumuman"),
-                RichEditor::make("deskripsi")
+                Textarea::make("deskripsi")
                     ->required()
                     ->label("Detail Pengumuman"),
                 FileUpload::make("thumbnail")

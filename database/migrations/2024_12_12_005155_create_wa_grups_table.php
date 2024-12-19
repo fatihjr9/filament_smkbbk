@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string("nama");
             $table->string("jurusan");
             $table->string("link");
-            $table->string("qr");
+            $table->string("qr")->nullable();
             $table->timestamps();
         });
     }
