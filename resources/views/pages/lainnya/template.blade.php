@@ -44,44 +44,44 @@
                         <thead>
                             <tr style="background-color: #0056b3; color: white;">
                                 <th colspan="2" style="padding: 0.5rem; text-align: left;">DATA CALON SISWA</th>
-                                <th style="padding: 0.5rem; text-align: left;">{{$pendaftaran->jurusan}}</th>
+                                <th style="padding: 0.5rem; text-align: left;">{{$pendaftaran->jurusan->nama}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">1</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Nama Lengkap</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->nama_siswa}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">1</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Nama Lengkap</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->nama_siswa}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">2</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Asal SMP / MTS</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->asal_sekolah}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">2</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Asal SMP / MTS</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->asal_sekolah}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">3</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Alamat Sekolah</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->alamat_asal_sekolah}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">3</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Alamat Sekolah</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->alamat_asal_sekolah}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">4</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Tempat / Tanggal Lahir</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->tmpt_lahir_siswa}} / {{ \Carbon\Carbon::parse($pendaftaran->tgl_lahir_siswa)->translatedFormat('d F Y') }}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">4</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Tempat / Tanggal Lahir</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->tmpt_lahir_siswa}} / {{ \Carbon\Carbon::parse($pendaftaran->tgl_lahir_siswa)->translatedFormat('d F Y') }}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">5</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Jenis Kelamin</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->jenis_kelamin}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">5</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Jenis Kelamin</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->jenis_kelamin}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">6</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Agama</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->agama}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">6</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Agama</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->agama}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">7</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Alamat</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">
+                                <td style="border: 1px solid black; padding: 0.15rem;">7</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Alamat</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">
                                     Desa : {{$pendaftaran->dusun}}<br>
                                     Kecamatan : {{$pendaftaran->kecamatan}}<br>
                                     Kabupaten : {{$pendaftaran->kota}}<br>
@@ -100,17 +100,17 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">12</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Nama Orang Tua / Wali</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">
+                                <td style="border: 1px solid black; padding: 0.15rem;">12</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Nama Orang Tua / Wali</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">
                                     Ayah : {{$pendaftaran->nama_ayah}}<br>
                                     Ibu : {{$pendaftaran->nama_ibu}}
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">13</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Nomor HP / WhatsApp Orang Tua</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->no_hp}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">13</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Nomor HP / WhatsApp Orang Tua</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->telp_hp}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -124,7 +124,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{ \Carbon\Carbon::parse($pendaftaran->tgl_daftar)->translatedFormat('d F Y') }}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{ \Carbon\Carbon::parse($pendaftaran->tgl_daftar)->translatedFormat('d F Y') }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -165,44 +165,44 @@
                         <thead>
                             <tr style="background-color: #0056b3; color: white;">
                                 <th colspan="2" style="padding: 0.5rem; text-align: left;">DATA CALON SISWA</th>
-                                <th style="padding: 0.5rem; text-align: left;">{{$pendaftaran->jurusan}}</th>
+                                <th style="padding: 0.5rem; text-align: left;">{{$pendaftaran->jurusan->nama}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">1</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Nama Lengkap</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->nama_siswa}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">1</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Nama Lengkap</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->nama_siswa}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">2</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Asal SMP / MTS</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->asal_sekolah}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">2</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Asal SMP / MTS</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->asal_sekolah}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">3</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Alamat Sekolah</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->alamat_asal_sekolah}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">3</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Alamat Sekolah</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->alamat_asal_sekolah}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">4</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Tempat / Tanggal Lahir</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->tmpt_lahir_siswa}} / {{ \Carbon\Carbon::parse($pendaftaran->tgl_lahir_siswa)->translatedFormat('d F Y') }}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">4</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Tempat / Tanggal Lahir</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->tmpt_lahir_siswa}} / {{ \Carbon\Carbon::parse($pendaftaran->tgl_lahir_siswa)->translatedFormat('d F Y') }}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">5</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Jenis Kelamin</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->jenis_kelamin}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">5</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Jenis Kelamin</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->jenis_kelamin}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">6</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Agama</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{$pendaftaran->agama}}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">6</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Agama</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{$pendaftaran->agama}}</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">7</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">Alamat</td>
-                                <td style="border: 1px solid black; padding: 0.5rem;">
+                                <td style="border: 1px solid black; padding: 0.15rem;">7</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">Alamat</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">
                                     Desa : {{$pendaftaran->dusun}}<br>
                                     Kecamatan : {{$pendaftaran->kecamatan}}<br>
                                     Kabupaten : {{$pendaftaran->kota}}<br>
@@ -221,7 +221,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="border: 1px solid black; padding: 0.5rem;">{{ \Carbon\Carbon::parse($pendaftaran->tgl_daftar)->translatedFormat('d F Y') }}</td>
+                                <td style="border: 1px solid black; padding: 0.15rem;">{{ \Carbon\Carbon::parse($pendaftaran->tgl_daftar)->translatedFormat('d F Y') }}</td>
                             </tr>
                         </tbody>
                     </table>

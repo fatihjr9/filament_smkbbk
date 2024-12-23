@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\JurusanResource\Pages;
-use App\Filament\Resources\JurusanResource\RelationManagers;
-use App\Models\Jurusan;
+use App\Filament\Resources\FasilitasResource\Pages;
+use App\Filament\Resources\FasilitasResource\RelationManagers;
+use App\Models\Fasilitas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -17,29 +17,27 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Filament\Forms\Components\Textarea;
 
-class JurusanResource extends Resource
+class FasilitasResource extends Resource
 {
-    protected static ?string $model = Jurusan::class;
+    protected static ?string $model = Fasilitas::class;
     protected static ?string $navigationGroup = "Profil Sekolah";
-    protected static ?string $navigationLabel = "Program Keahlian";
-    protected static ?string $navigationIcon = "heroicon-o-wrench-screwdriver";
+    protected static ?string $navigationLabel = "Fasilitas Sekolah";
+
+    protected static ?string $navigationIcon = "heroicon-o-rectangle-stack";
 
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Section::make("Program keahlian")->schema([
-                TextInput::make("nama")->required()->label("Nama Jurusan"),
-                Textarea::make("deskripsi")
-                    ->required()
-                    ->label("Detail Program Studi"),
-                FileUpload::make("thumbnail")
+            Section::make("Fasilitas")->schema([
+                TextInput::make("nama")->required()->label("Nama Fasilitas"),
+                TextInput::make("deskripsi")->label("Deskripsi"),
+                FileUpload::make("foto")
                     ->image()
-                    ->directory("Thumbnail-Jurusan")
-                    ->maxSize(10240)
+                    ->directory("Thumbnail-foto-fasilitas")
+                    ->maxSize(1024)
                     ->required()
-                    ->label("Thumbnail Jurusan ( Maksimal 10 Mb )"),
+                    ->label("Thumbnail Fasilitas ( Maksimal 1 Mb )"),
             ]),
         ]);
     }
@@ -48,11 +46,9 @@ class JurusanResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make("thumbnail"),
-                TextColumn::make("nama")->searchable(),
-                TextColumn::make("deskripsi")
-                    ->formatStateUsing(fn($state) => strip_tags($state))
-                    ->limit(50),
+                ImageColumn::make("foto")->label("Foto Fasilitas"),
+                TextColumn::make("nama")->label("Nama Fasilitas")->searchable(),
+                TextColumn::make("deskripsi")->label("Deskripsi Fasilitas"),
             ])
             ->filters([
                 //
@@ -78,9 +74,9 @@ class JurusanResource extends Resource
     public static function getPages(): array
     {
         return [
-            "index" => Pages\ListJurusans::route("/"),
-            "create" => Pages\CreateJurusan::route("/create"),
-            "edit" => Pages\EditJurusan::route("/{record}/edit"),
+            "index" => Pages\ListFasilitas::route("/"),
+            "create" => Pages\CreateFasilitas::route("/create"),
+            "edit" => Pages\EditFasilitas::route("/{record}/edit"),
         ];
     }
 }

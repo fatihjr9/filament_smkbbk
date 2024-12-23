@@ -38,7 +38,7 @@ class PendaftaranResource extends Resource
                 TextColumn::make("nama_siswa")->searchable(),
                 TextColumn::make("tmpt_lahir_siswa"),
                 TextColumn::make("tgl_lahir_siswa")->date(),
-                TextColumn::make("jurusan")->searchable(),
+                TextColumn::make("jurusan.nama")->searchable(),
                 TextColumn::make("tgl_daftar")->date(),
                 TextColumn::make("no_registrasi"),
             ])

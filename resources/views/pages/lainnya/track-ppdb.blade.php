@@ -50,7 +50,7 @@
                             <tbody>
                                 <tr>
                                     <td class="px-6 py-4">{{ $p->nama_siswa }}</td>
-                                    <td class="px-6 py-4">{{ $p->jurusan }}</td>
+                                    <td class="px-6 py-4">{{ $p->jurusan->nama }}</td>
                                     <td class="px-6 py-4">{{ \Carbon\Carbon::parse($p->tgl_daftar)->translatedFormat('d F Y') }}</td>
                                     <td class="px-6 py-4">{{ $p->no_registrasi }}</td>
                                 </tr>

@@ -36,7 +36,10 @@ class PendaftaranController extends Controller
     public function downloadRegistration($id)
     {
         $pendaftaran = Pendaftaran::findOrFail($id);
-        $waGrup = WaGrup::where("jurusan", $pendaftaran->jurusan)->first();
+        $waGrup = WaGrup::where(
+            "jurusan",
+            $pendaftaran->jurusan->nama
+        )->first();
         $penyelenggara = Penyelenggara::latest()->first();
         $qrCode = null;
         $waGrupLink = null;
@@ -66,7 +69,7 @@ class PendaftaranController extends Controller
             "tgl_daftar" => "required|date",
             "tingkat" => "required|string",
             "no_registrasi" => "required|string",
-            "jurusan" => "required|string",
+            "jurusan_id" => "required|exists:jurusans,id",
             // siswa
             "nama_siswa" => "required|string",
             "asal_sekolah" => "required|string",

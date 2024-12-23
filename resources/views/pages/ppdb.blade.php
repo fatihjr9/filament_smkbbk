@@ -29,10 +29,10 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Program</label>
-                            <select name="jurusan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                            <select name="jurusan_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
                                 <option>Pilih Jurusan</option>
                                 @foreach($jurusan as $j)
-                                <option value="{{ $j->nama }}">{{ $j->nama }}</option>
+                                <option value="{{ $j->id }}">{{ $j->nama }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -65,7 +65,53 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Asal Sekolah</label>
-                            <input type="text" name="asal_sekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <div class="grid grid-cols-2 gap-x-2">
+                                <input id="asal_sekolah_input" type="text" name="asal_sekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                                <select id="asal_sekolah_select" name="asal_sekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                    <option value="MTS AL ADHAR CIKEUSAL">MTS AL ADHAR CIKEUSAL</option>
+                                    <option value="MTS AL FALAH CIHAUR">MTS AL FALAH CIHAUR</option>
+                                    <option value="MTS AL HIDAYAH BANJARHARJO">MTS AL HIDAYAH BANJARHARJO</option>
+                                    <option value="MTS AL IKHLAS PENDE BANJARHARJO">MTS AL IKHLAS PENDE BANJARHARJO</option>
+                                    <option value="MTS AL KAUTSAR DUKUH BADAG">MTS AL KAUTSAR DUKUH BADAG</option>
+                                    <option value="MTS AL MIFTAH SINDANGJAYA">MTS AL MIFTAH SINDANGJAYA</option>
+                                    <option value="MTS ANNUR KARANGJUNTI">MTS ANNUR KARANGJUNTI</option>
+                                    <option value="MTS DAAR ES SALAM LUWUNGGEDE TANJUNG">MTS DAAR ES SALAM LUWUNGGEDE TANJUNG</option>
+                                    <option value="MTS HIDAYATUL UMMAH MALAHAYU">MTS HIDAYATUL UMMAH MALAHAYU</option>
+                                    <option value="MTS I'ANATULMUTAALIMIN KUBANGWUNGU">MTS I'ANATULMUTAALIMIN KUBANGWUNGU</option>
+                                    <option value="MTS KEDAWON TANJUNG">MTS KEDAWON TANJUNG</option>
+                                    <option value="MTS MA'ARIF NU 6 BANDUNGSARI">MTS MA'ARIF NU 6 BANDUNGSARI</option>
+                                    <option value="MTS MA'ARIF NU 9 PENDE KERSANA">MTS MA'ARIF NU 9 PENDE KERSANA</option>
+                                    <option value="MTS MAFATIHUL HUDA PADAKATON KETANGGUNGAN">MTS MAFATIHUL HUDA PADAKATON KETANGGUNGAN</option>
+                                    <option value="MTS N 1 BREBES">MTS N 1 BREBES</option>
+                                    <option value="MTS N 5 BREBES">MTS N 5 BREBES</option>
+                                    <option value="MTS PLUS AL BUKHORI TANJUNG">MTS PLUS AL BUKHORI TANJUNG</option>
+                                    <option value="MTS S AN NASHUHA">MTS S AN NASHUHA</option>
+                                    <option value="MTS SUBULUL IHKSAN KERSANA">MTS SUBULUL IHKSAN KERSANA</option>
+                                    <option value="SMP AL MAARIF KETANGGUNGAN">SMP AL MAARIF KETANGGUNGAN</option>
+                                    <option value="SMP ISLAM BUSTANUL ULUM BANJARHARJO">SMP ISLAM BUSTANUL ULUM BANJARHARJO</option>
+                                    <option value="SMP MAARIF FATUROHMAH KERSANA">SMP MAARIF FATUROHMAH KERSANA</option>
+                                    <option value="SMP MANBAUL ANWAR AL MAHDY BANJARHARJO">SMP MANBAUL ANWAR AL MAHDY BANJARHARJO</option>
+                                    <option value="SMP N 1 BANJARHARJO">SMP N 1 BANJARHARJO</option>
+                                    <option value="SMP N 1 KERSANA">SMP N 1 KERSANA</option>
+                                    <option value="SMP N 1 KETANGGUNGAN">SMP N 1 KETANGGUNGAN</option>
+                                    <option value="SMP N 1 TANJUNG">SMP N 1 TANJUNG</option>
+                                    <option value="SMP N 2 BANJARHARJO">SMP N 2 BANJARHARJO</option>
+                                    <option value="SMP N 2 KERSANA">SMP N 2 KERSANA</option>
+                                    <option value="SMP N 2 KETANGGUNGAN">SMP N 2 KETANGGUNGAN</option>
+                                    <option value="SMP N 2 LOSARI">SMP N 2 LOSARI</option>
+                                    <option value="SMP N 2 TANJUNG">SMP N 2 TANJUNG</option>
+                                    <option value="SMP N 3 BANJARHARJO">SMP N 3 BANJARHARJO</option>
+                                    <option value="SMP N 3 KERSANA">SMP N 3 KERSANA</option>
+                                    <option value="SMP N 3 KETANGGUNGAN">SMP N 3 KETANGGUNGAN</option>
+                                    <option value="SMP N 4 BANJARHARJO">SMP N 4 BANJARHARJO</option>
+                                    <option value="SMP N 4 KETANGGUNGAN">SMP N 4 KETANGGUNGAN</option>
+                                    <option value="SMP N 4 LOSARI">SMP N 4 LOSARI</option>
+                                    <option value="SMP N 4 TANJUNG">SMP N 4 TANJUNG</option>
+                                    <option value="SMP N 5 TANJUNG">SMP N 5 TANJUNG</option>
+                                    <option value="SMP NU HASYIM ASY'ARI BANJARHARJO">SMP NU HASYIM ASY'ARI BANJARHARJO</option>
+                                    <option value="SMP PONPES NURUL HAYAH KETANGGUNGAN">SMP PONPES NURUL HAYAH KETANGGUNGAN</option>
+                                </select>
+                            </div>
                             @error('asal_sekolah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -126,7 +172,14 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Agama</label>
-                            <input type="text" name="agama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Masukkan Agama" />
+                            <select name="agama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen/Protestan">Kristen/Protestan</option>
+                                <option value="Katholik">Katholik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Buddha">Buddha</option>
+                                <option value="Khonghucu">Khonghucu</option>
+                            </select>
                             @error('agama')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -135,7 +188,25 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Berkebutuhan Khusus</label>
-                            <input type="text" name="kebutuhan_khusus_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Apakah Berkebutuhan Khusus?" />
+                            <select name="kebutuhan_khusus_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="Tidak">Tidak</option>
+                                <option value="Netra (A)">Netra (A)</option>
+                                <option value="Rungu (B)">Rungu (B)</option>
+                                <option value="Grahita Ringan (C)">Grahita Ringan (C)</option>
+                                <option value="Grahita Sedang (C1)">Grahita Sedang (C1)</option>
+                                <option value="Daksa Ringan (D)">Daksa Ringan (D)</option>
+                                <option value="Daksa Sedang (D1)">Daksa Sedang (D1)</option>
+                                <option value="Wicara (F)">Wicara (F)</option>
+                                <option value="Tuna Ganda (G)">Tuna Ganda (G)</option>
+                                <option value="Hiper Aktif (H)">Hiper Aktif (H)</option>
+                                <option value="Cerdas Istimewa (I)">Cerdas Istimewa (I)</option>
+                                <option value="Bakat Istimewa (J)">Bakat Istimewa (J)</option>
+                                <option value="Kesulitan Belajar (K)">Kesulitan Belajar (K)</option>
+                                <option value="Narkoba (N)">Narkoba (N)</option>
+                                <option value="Indigo (O)">Indigo (O)</option>
+                                <option value="Down Sindrome (P)">Down Sindrome (P)</option>
+                                <option value="Autis (Q)">Autis (Q)</option>
+                            </select>
                             @error('kebutuhan_khusus_siswa')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -212,7 +283,17 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Alat Transportasi ke Sekolah</label>
-                            <input type="text" name="transport" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="transport" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                    <option value="Jalan kaki">Jalan kaki</option>
+                                    <option value="Kendaraan pribadi">Kendaraan pribadi</option>
+                                    <option value="Kendaraan Umum/angkot/Pete-pete">Kendaraan Umum/angkot/Pete-pete</option>
+                                    <option value="Jemputan Sekolah">Jemputan Sekolah</option>
+                                    <option value="Kereta Api">Kereta Api</option>
+                                    <option value="Ojek">Ojek</option>
+                                    <option value="Andong/Bendi/Sado/Dokar/Delman/Beca">Andong/Bendi/Sado/Dokar/Delman/Beca</option>
+                                    <option value="Perahu penyebrangan/Rakit/Getek">Perahu penyebrangan/Rakit/Getek</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
                             @error('transport')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -314,7 +395,25 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Berkebutuhan Khusus</label>
-                            <input type="text" name="kebutuhan_khusus_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="kebutuhan_khusus_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="Tidak">Tidak</option>
+                                <option value="Netra (A)">Netra (A)</option>
+                                <option value="Rungu (B)">Rungu (B)</option>
+                                <option value="Grahita Ringan (C)">Grahita Ringan (C)</option>
+                                <option value="Grahita Sedang (C1)">Grahita Sedang (C1)</option>
+                                <option value="Daksa Ringan (D)">Daksa Ringan (D)</option>
+                                <option value="Daksa Sedang (D1)">Daksa Sedang (D1)</option>
+                                <option value="Wicara (F)">Wicara (F)</option>
+                                <option value="Tuna Ganda (G)">Tuna Ganda (G)</option>
+                                <option value="Hiper Aktif (H)">Hiper Aktif (H)</option>
+                                <option value="Cerdas Istimewa (I)">Cerdas Istimewa (I)</option>
+                                <option value="Bakat Istimewa (J)">Bakat Istimewa (J)</option>
+                                <option value="Kesulitan Belajar (K)">Kesulitan Belajar (K)</option>
+                                <option value="Narkoba (N)">Narkoba (N)</option>
+                                <option value="Indigo (O)">Indigo (O)</option>
+                                <option value="Down Sindrome (P)">Down Sindrome (P)</option>
+                                <option value="Autis (Q)">Autis (Q)</option>
+                            </select>
                             @error('kebutuhan_khusus_ayah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -367,7 +466,25 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Berkebutuhan Khusus</label>
-                            <input type="text" name="kebutuhan_khusus_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="kebutuhan_khusus_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="Tidak">Tidak</option>
+                                <option value="Netra (A)">Netra (A)</option>
+                                <option value="Rungu (B)">Rungu (B)</option>
+                                <option value="Grahita Ringan (C)">Grahita Ringan (C)</option>
+                                <option value="Grahita Sedang (C1)">Grahita Sedang (C1)</option>
+                                <option value="Daksa Ringan (D)">Daksa Ringan (D)</option>
+                                <option value="Daksa Sedang (D1)">Daksa Sedang (D1)</option>
+                                <option value="Wicara (F)">Wicara (F)</option>
+                                <option value="Tuna Ganda (G)">Tuna Ganda (G)</option>
+                                <option value="Hiper Aktif (H)">Hiper Aktif (H)</option>
+                                <option value="Cerdas Istimewa (I)">Cerdas Istimewa (I)</option>
+                                <option value="Bakat Istimewa (J)">Bakat Istimewa (J)</option>
+                                <option value="Kesulitan Belajar (K)">Kesulitan Belajar (K)</option>
+                                <option value="Narkoba (N)">Narkoba (N)</option>
+                                <option value="Indigo (O)">Indigo (O)</option>
+                                <option value="Down Sindrome (P)">Down Sindrome (P)</option>
+                                <option value="Autis (Q)">Autis (Q)</option>
+                            </select>
                             @error('kebutuhan_khusus_ibu')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -515,4 +632,21 @@
             <button type="submit" class="w-full bg-red-800 text-white py-2 rounded-xl text-lg font-bold">Daftar Sekarang</button>
         </form>
     </div>
+    <script>
+        const selectElement = document.getElementById('asal_sekolah_select');
+        const inputElement = document.getElementById('asal_sekolah_input');
+
+        selectElement.addEventListener('change', function () {
+            if (this.value === "") {
+                inputElement.classList.remove('hidden');
+                inputElement.required = true;
+                selectElement.name = "";
+            } else {
+                inputElement.classList.add('hidden');
+                inputElement.required = false;
+                inputElement.value = ""; // Kosongkan input manual
+                selectElement.name = "asal_sekolah"; // Set nama kembali ke select
+            }
+        });
+    </script>
 </x-client-layout>

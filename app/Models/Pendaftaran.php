@@ -11,7 +11,7 @@ class Pendaftaran extends Model
         "asal_sekolah",
         "alamat_asal_sekolah",
         "no_registrasi",
-        "jurusan",
+        "jurusan_id",
         "nama_siswa",
         "jenis_kelamin",
         "nisn",
@@ -72,4 +72,9 @@ class Pendaftaran extends Model
         "saudara_kandung",
         "uk_baju",
     ];
+
+    public function jurusan()
+    {
+        return $this->belongsTo(Jurusan::class, "jurusan_id");
+    }
 }

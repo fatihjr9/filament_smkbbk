@@ -16,7 +16,11 @@ return new class extends Migration {
             $table->date("tgl_daftar");
             $table->string("tingkat")->default("Kelas X");
             $table->string("no_registrasi");
-            $table->string("jurusan");
+            $table
+                ->foreignId("jurusan_id")
+                ->nullable()
+                ->constrained("jurusans")
+                ->onDelete("cascade");
             // siswa
             $table->string("nama_siswa");
             $table->string("jenis_kelamin");

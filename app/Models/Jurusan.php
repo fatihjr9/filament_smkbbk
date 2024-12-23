@@ -13,4 +13,12 @@ class Jurusan extends Model
     {
         return $this->hasMany(Organisasi::class);
     }
+    public function produk()
+    {
+        return $this->hasMany(Produk::class);
+    }
+    public function pendaftaran()
+    {
+        return $this->hasMany(Pendaftaran::class);
+    }
 }
