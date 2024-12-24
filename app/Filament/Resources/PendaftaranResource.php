@@ -46,6 +46,7 @@ class PendaftaranResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
@@ -69,6 +70,7 @@ class PendaftaranResource extends Resource
             "index" => Pages\ListPendaftarans::route("/"),
             "create" => Pages\CreatePendaftaran::route("/create"),
             "edit" => Pages\EditPendaftaran::route("/{record}/edit"),
+            "view" => Pages\ViewPendaftaran::route("/{record}"),
         ];
     }
 }

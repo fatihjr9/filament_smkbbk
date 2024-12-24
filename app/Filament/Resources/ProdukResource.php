@@ -23,7 +23,7 @@ class ProdukResource extends Resource
 {
     protected static ?string $model = Produk::class;
     protected static ?string $navigationGroup = "Profil Sekolah";
-    protected static ?string $navigationLabel = "Produk Kami";
+    protected static ?string $navigationLabel = "Produk TEFA";
 
     protected static ?string $navigationIcon = "heroicon-o-rectangle-stack";
 

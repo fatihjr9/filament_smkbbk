@@ -8,6 +8,7 @@ use App\Models\Jurusan;
 use App\Models\Organisasi;
 use App\Models\Pendaftaran;
 use App\Models\Pengumuman;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +43,11 @@ class ClientController extends Controller
                 "totalPerJurusan"
             )
         );
+    }
+    public function tefaProduk()
+    {
+        $data = Produk::with("jurusan")->get();
+        return view("pages.tefa", compact("data"));
     }
     public function jurusanDetail($name)
     {

@@ -24,7 +24,10 @@
             <section>
                 <section class="hidden lg:block">
                     <nav class="bg-white w-full px-6 py-3 z-50 relative flex flex-row items-center justify-between border-b border-slate-200">
-                        <img class="w-16" src="{{ asset('/logo.png') }}" />
+                        <a href="{{ route('home') }}" class="flex flex-row items-center gap-x-2">
+                            <img class="w-14" src="{{ asset('/logo.png') }}" />
+                            <p class="text-lg font-bold">SMK Bina Bangsa Kersana</p>
+                        </a>
                         <div class="flex flex-row gap-x-6">
                             <div class=" flex flex-row items-center gap-x-3 justify-end">
                                 <a href="{{ route('home') }}" class="
@@ -35,13 +38,13 @@
                                     @endif
                                     transition-colors duration-300">Beranda
                                 </a>
-                                <a href="{{ route('profil-index') }}" class="
-                                    @if(Route::currentRouteName() == 'profil-index')
+                                <a href="{{ route('tefa-index') }}" class="
+                                    @if(Route::currentRouteName() == 'tefa-index')
                                         text-red-800 border-b-2 border-red-800
                                     @else
                                         hover:text-red-800 hover:border-b-2 hover:border-red-800
                                     @endif
-                                    transition-colors duration-300">Profil
+                                    transition-colors duration-300">TEFA
                                 </a>
                                 <a href="{{ route('pengumuman-index') }}" class="
                                     @if(Route::currentRouteName() == 'pengumuman-index')
@@ -61,13 +64,11 @@
                                         @endphp
                                         @foreach ($navJurusan as $jurusan)
                                             <li>
-                                                <a href="{{ route('jurusan-detail', $jurusan->nama) }}"
-                                                    class="@if(Route::currentRouteName() == 'jurusan-detail')
-                                                    text-red-800 block px-4 py-2 text-base
-                                                @else
-                                                    hover:text-red-800 hover:border-b-2 hover:border-red-800 block px-4 py-2 text-base hover:bg-gray-100
-                                                @endif
-                                                transition-colors duration-300">{{ $jurusan->nama }}</a>
+                                                <a href="{{ route('jurusan-detail', ['name' => $jurusan->nama]) }}"
+                                                   class="block px-4 py-2 text-base transition-colors duration-300
+                                                          {{ Route::currentRouteName() == 'jurusan-detail' && request('name') == $jurusan->nama ? 'text-red-800' : 'hover:text-red-800 hover:border-b-2 hover:border-red-800 hover:bg-gray-100' }}">
+                                                    {{ $jurusan->nama }}
+                                                </a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -85,6 +86,14 @@
                                             hover:text-red-800 hover:border-b-2 hover:border-red-800 block px-4 py-2 text-base hover:bg-gray-100
                                         @endif
                                         transition-colors duration-300">Lacak PPDB</a>
+                                        <a href="{{ route('profil-index') }}" class="
+                                            @if(Route::currentRouteName() == 'profil-index')
+                                                text-red-800 block px-4 py-2 text-base
+                                            @else
+                                                hover:text-red-800 hover:border-b-2 hover:border-red-800 block px-4 py-2 text-base hover:bg-gray-100
+                                            @endif
+                                            transition-colors duration-300">Profil Sekolah
+                                        </a>
                                         <a href="{{ route('org-index') }}"
                                             class="@if(Route::currentRouteName() == 'org-index')
                                             text-red-800 block px-4 py-2 text-base

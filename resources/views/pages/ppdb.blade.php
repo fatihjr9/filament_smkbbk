@@ -302,7 +302,13 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Jenis Tinggal</label>
-                            <input type="text" name="jenis_tinggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="jenis_tinggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="Bersama Ortu">Bersama Ortu</option>
+                                <option value="Wali">Wali</option>
+                                <option value="Kos">Kos</option>
+                                <option value="Asrama">Asrama</option>
+                                <option value="Panti Asuhan">Panti Asuhan</option>
+                            </select>
                             @error('jenis_tinggal')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -420,7 +426,21 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pekerjaan</label>
-                            <input type="text" name="pekerjaan_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="pekerjaan_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="tidak-bekerja">Tidak bekerja</option>
+                                <option value="nelayan">Nelayan</option>
+                                <option value="petani">Petani</option>
+                                <option value="peternak">Peternak</option>
+                                <option value="pns-tni-polri">PNS/TNI/POLRI</option>
+                                <option value="karyawan-swasta">Karyawan Swasta</option>
+                                <option value="pedagang-kecil">Pedagang Kecil</option>
+                                <option value="pedagang-besar">Pedagang Besar</option>
+                                <option value="wiraswasta">Wiraswasta</option>
+                                <option value="wirausaha">Wirausaha</option>
+                                <option value="buruh">Buruh</option>
+                                <option value="pensiunan">Pensiunan</option>
+                                <option value="meninggal-dunia">Meninggal Dunia</option>
+                            </select>
                             @error('pekerjaan_ayah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -429,14 +449,34 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pendidikan Terakhir</label>
-                            <input type="text" name="pendidikan_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="pendidikan_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="tidak-sekolah">Tidak sekolah</option>
+                                <option value="putus-sd">Putus SD</option>
+                                <option value="sd-sederajat">SD Sederajat</option>
+                                <option value="smp-sederajat">SMP Sederajat</option>
+                                <option value="sma-sederajat">SMA Sederajat</option>
+                                <option value="d1">D1</option>
+                                <option value="d2">D2</option>
+                                <option value="d3">D3</option>
+                                <option value="d4-s1">D4/S1</option>
+                                <option value="s2">S2</option>
+                                <option value="s3">S3</option>
+                            </select>
                             @error('pendidikan_ayah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Penghasilan</label>
-                            <input type="text" name="penghasilan_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="penghasilan_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="<500000">< Rp. 500.000</option>
+                                <option value="500000-999999">Rp. 500.000 - Rp. 999.999</option>
+                                <option value="1000000-1999999">Rp. 1.000.000 - Rp. 1.999.999</option>
+                                <option value="2000000-4999999">Rp. 2.000.000 - Rp. 4.999.999</option>
+                                <option value="5000000-20000000">Rp. 5.000.000 - Rp. 20.000.000</option>
+                                <option value=">20000000">> Rp. 20.000.000</option>
+                                <option value="tidak-berpenghasilan">Tidak Berpenghasilan</option>
+                            </select>
                             @error('penghasilan_ayah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -491,7 +531,21 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pekerjaan</label>
-                            <input type="text" name="pekerjaan_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="pekerjaan_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="tidak-bekerja">Tidak bekerja</option>
+                                <option value="nelayan">Nelayan</option>
+                                <option value="petani">Petani</option>
+                                <option value="peternak">Peternak</option>
+                                <option value="pns-tni-polri">PNS/TNI/POLRI</option>
+                                <option value="karyawan-swasta">Karyawan Swasta</option>
+                                <option value="pedagang-kecil">Pedagang Kecil</option>
+                                <option value="pedagang-besar">Pedagang Besar</option>
+                                <option value="wiraswasta">Wiraswasta</option>
+                                <option value="wirausaha">Wirausaha</option>
+                                <option value="buruh">Buruh</option>
+                                <option value="pensiunan">Pensiunan</option>
+                                <option value="meninggal-dunia">Meninggal Dunia</option>
+                            </select>
                             @error('pekerjaan_ibu')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -500,14 +554,34 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pendidikan Terakhir</label>
-                            <input type="text" name="pendidikan_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="pendidikan_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="tidak-sekolah">Tidak sekolah</option>
+                                <option value="putus-sd">Putus SD</option>
+                                <option value="sd-sederajat">SD Sederajat</option>
+                                <option value="smp-sederajat">SMP Sederajat</option>
+                                <option value="sma-sederajat">SMA Sederajat</option>
+                                <option value="d1">D1</option>
+                                <option value="d2">D2</option>
+                                <option value="d3">D3</option>
+                                <option value="d4-s1">D4/S1</option>
+                                <option value="s2">S2</option>
+                                <option value="s3">S3</option>
+                            </select>
                             @error('pendidikan_ibu')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Penghasilan</label>
-                            <input type="text" name="penghasilan_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="penghasilan_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="<500000">< Rp. 500.000</option>
+                                <option value="500000-999999">Rp. 500.000 - Rp. 999.999</option>
+                                <option value="1000000-1999999">Rp. 1.000.000 - Rp. 1.999.999</option>
+                                <option value="2000000-4999999">Rp. 2.000.000 - Rp. 4.999.999</option>
+                                <option value="5000000-20000000">Rp. 5.000.000 - Rp. 20.000.000</option>
+                                <option value=">20000000">> Rp. 20.000.000</option>
+                                <option value="tidak-berpenghasilan">Tidak Berpenghasilan</option>
+                            </select>
                             @error('penghasilan_ibu')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -531,21 +605,73 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Berkebutuhan Khusus</label>
-                            <input type="text" name="kebutuhan_khusus_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="kebutuhan_khusus_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="Tidak">Tidak</option>
+                                <option value="Netra (A)">Netra (A)</option>
+                                <option value="Rungu (B)">Rungu (B)</option>
+                                <option value="Grahita Ringan (C)">Grahita Ringan (C)</option>
+                                <option value="Grahita Sedang (C1)">Grahita Sedang (C1)</option>
+                                <option value="Daksa Ringan (D)">Daksa Ringan (D)</option>
+                                <option value="Daksa Sedang (D1)">Daksa Sedang (D1)</option>
+                                <option value="Wicara (F)">Wicara (F)</option>
+                                <option value="Tuna Ganda (G)">Tuna Ganda (G)</option>
+                                <option value="Hiper Aktif (H)">Hiper Aktif (H)</option>
+                                <option value="Cerdas Istimewa (I)">Cerdas Istimewa (I)</option>
+                                <option value="Bakat Istimewa (J)">Bakat Istimewa (J)</option>
+                                <option value="Kesulitan Belajar (K)">Kesulitan Belajar (K)</option>
+                                <option value="Narkoba (N)">Narkoba (N)</option>
+                                <option value="Indigo (O)">Indigo (O)</option>
+                                <option value="Down Sindrome (P)">Down Sindrome (P)</option>
+                                <option value="Autis (Q)">Autis (Q)</option>
+                            </select>
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pekerjaan</label>
-                            <input type="text" name="pekerjaan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="pekerjaan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="tidak-bekerja">Tidak bekerja</option>
+                                <option value="nelayan">Nelayan</option>
+                                <option value="petani">Petani</option>
+                                <option value="peternak">Peternak</option>
+                                <option value="pns-tni-polri">PNS/TNI/POLRI</option>
+                                <option value="karyawan-swasta">Karyawan Swasta</option>
+                                <option value="pedagang-kecil">Pedagang Kecil</option>
+                                <option value="pedagang-besar">Pedagang Besar</option>
+                                <option value="wiraswasta">Wiraswasta</option>
+                                <option value="wirausaha">Wirausaha</option>
+                                <option value="buruh">Buruh</option>
+                                <option value="pensiunan">Pensiunan</option>
+                                <option value="meninggal-dunia">Meninggal Dunia</option>
+                            </select>
                         </div>
                     </section>
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pendidikan Terakhir</label>
-                            <input type="text" name="pendidikan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="pendidikan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="tidak-sekolah">Tidak sekolah</option>
+                                <option value="putus-sd">Putus SD</option>
+                                <option value="sd-sederajat">SD Sederajat</option>
+                                <option value="smp-sederajat">SMP Sederajat</option>
+                                <option value="sma-sederajat">SMA Sederajat</option>
+                                <option value="d1">D1</option>
+                                <option value="d2">D2</option>
+                                <option value="d3">D3</option>
+                                <option value="d4-s1">D4/S1</option>
+                                <option value="s2">S2</option>
+                                <option value="s3">S3</option>
+                            </select>
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Penghasilan</label>
-                            <input type="text" name="penghasilan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <select name="penghasilan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="<500000">< Rp. 500.000</option>
+                                <option value="500000-999999">Rp. 500.000 - Rp. 999.999</option>
+                                <option value="1000000-1999999">Rp. 1.000.000 - Rp. 1.999.999</option>
+                                <option value="2000000-4999999">Rp. 2.000.000 - Rp. 4.999.999</option>
+                                <option value="5000000-20000000">Rp. 5.000.000 - Rp. 20.000.000</option>
+                                <option value=">20000000">> Rp. 20.000.000</option>
+                                <option value="tidak-berpenghasilan">Tidak Berpenghasilan</option>
+                            </select>
                         </div>
                     </section>
                 </div>
@@ -572,7 +698,10 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Jarak Tempat ke sekolah</label>
-                            <input type="number" min="0" name="jarak_kesekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Contoh: 500m, atau 1km" />
+                            <select name="jarak_kesekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option value="Kurang Dari 1KM">Lebih Dari 1KM</option>
+                                <option value="Lebih Dari 1KM">Kurang Dari 1KM</option>
+                            </select>
                             @error('jarak_kesekolah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror

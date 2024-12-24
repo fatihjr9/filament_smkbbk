@@ -79,7 +79,7 @@ return new class extends Migration {
             // periodik
             $table->integer("tb");
             $table->integer("bb");
-            $table->integer("jarak_kesekolah");
+            $table->string("jarak_kesekolah");
             $table->integer("jarak_kesekolah_lainnya");
             $table->integer("waktu_kesekolah");
             $table->integer("waktu_kesekolah_lainnya");
