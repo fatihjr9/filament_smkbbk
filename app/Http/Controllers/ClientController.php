@@ -44,11 +44,6 @@ class ClientController extends Controller
             )
         );
     }
-    public function tefaProduk()
-    {
-        $data = Produk::with("jurusan")->get();
-        return view("pages.tefa", compact("data"));
-    }
     public function jurusanDetail($name)
     {
         $data = Jurusan::where("nama", $name)

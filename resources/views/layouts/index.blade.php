@@ -38,14 +38,14 @@
                                     @endif
                                     transition-colors duration-300">Beranda
                                 </a>
-                                <a href="{{ route('tefa-index') }}" class="
+                                {{-- <a href="{{ route('tefa-index') }}" class="
                                     @if(Route::currentRouteName() == 'tefa-index')
                                         text-red-800 border-b-2 border-red-800
                                     @else
                                         hover:text-red-800 hover:border-b-2 hover:border-red-800
                                     @endif
                                     transition-colors duration-300">TEFA
-                                </a>
+                                </a> --}}
                                 <a href="{{ route('pengumuman-index') }}" class="
                                     @if(Route::currentRouteName() == 'pengumuman-index')
                                         text-red-800 border-b-2 border-red-800

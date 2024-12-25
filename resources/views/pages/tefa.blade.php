@@ -1,7 +1,7 @@
 <x-client-layout>
     <div class="flex flex-col space-y-1 mt-6 mb-2">
-        <h5 class="text-3xl font-bold">Produk Tefa</h5>
-        <p class="text-gray-600">lorem ipsum sitt dolor amet</p>
+        <h5 class="text-3xl font-bold">Produk TEFA</h5>
+        <p class="text-gray-600">model pembelajaran yang menggabungkan proses produksi dan jasa ke dalam kurikulum pendidikan.</p>
     </div>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         @foreach ($data as $p)
@@ -11,7 +11,7 @@
                         <img class="w-full object-cover h-96 group-hover:scale-110 transition-all duration-1000 rounded-xl" src="{{ asset('storage/' . $p->foto) }}" alt="Gambar {{ $p->nama }}"/>
                         <div class="flex flex-col px-6 py-4 absolute bottom-4 w-fit text-white z-20">
                             <h5 class="text-xl font-bold">{{ $p->nama }}</h5>
-                            <h5 class="text-xl font-bold">{{ $p->jurusan->nama }}</h5>
+                            <h5 class="w-fit rounded-full mt-2 font-bold px-3 py-1 bg-red-50 text-red-800">{{ $p->jurusan->nama }}</h5>
                         </div>
                     </div>
                 </div>

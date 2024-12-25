@@ -13,9 +13,6 @@ Route::get("/pendaftaran-sukses", function () {
     return view("pages.success");
 })->name("success-index");
 
-Route::get("/teaching-factory", [ClientController::class, "tefaProduk"])->name(
-    "tefa-index"
-);
 Route::get("/organisasi-sekolah", [
     ClientController::class,
     "organisasi",
