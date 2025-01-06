@@ -153,6 +153,19 @@
                                 </div>
                             </section>
                             <section class="mt-6">
+                                <h5 class="text-gray-500 font-bold">Jurusan</h5>
+                                @php
+                                $navJurusan = \App\Models\Jurusan::all(); // Mengambil data Jurusan
+                            @endphp
+                            @foreach ($navJurusan as $jurusan)
+                                <a href="{{ route('jurusan-detail', ['name' => $jurusan->nama]) }}"
+                                   class="block text-lg py-1 transition-colors duration-300 
+                                          {{ Route::currentRouteName() == 'jurusan-detail' && request('name') == $jurusan->nama ? 'text-red-800' : 'hover:text-red-800 hover:border-b-2 hover:border-red-800' }}">
+                                    {{ $jurusan->nama }}
+                                </a>
+                            @endforeach
+                            </section>
+                            <section class="mt-6">
                                 <h5 class="text-gray-500 font-bold">Lainnya</h5>
                                 <div class="flex flex-col space-y-2 mt-1">
                                     <a href="{{ route('ppdb-track') }}"
@@ -162,6 +175,14 @@
                                         hover:text-red-800 hover:border-b-2 py-1 hover:border-red-800 block text-lg
                                     @endif
                                     transition-colors duration-300">Lacak PPDB</a>
+                                    <a href="{{ route('profil-index') }}" class="
+                                        @if(Route::currentRouteName() == 'profil-index')
+                                            text-red-800 block text-lg py-1
+                                        @else
+                                            hover:text-red-800 hover:border-b-2 py-1 hover:border-red-800 block text-lg
+                                        @endif
+                                        transition-colors duration-300">Profil Sekolah
+                                    </a>
                                     <a href="{{ route('org-index') }}"
                                         class="@if(Route::currentRouteName() == 'org-index')
                                         text-red-800 text-lg block py-1
@@ -171,6 +192,10 @@
                                     transition-colors duration-300">Struktur Organisasi</a>
                                 </div>
                             </section>
+
+                        <a href="{{ route('ppdb-index') }}" class="w-full mt-4 text-lg font-bold py-2 rounded-full bg-red-800 text-white flex justify-center">
+                            Pendaftaran PPDB
+                        </a>
                         </div>
                     </nav>
                 </section>
