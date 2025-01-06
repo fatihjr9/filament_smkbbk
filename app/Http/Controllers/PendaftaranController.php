@@ -112,25 +112,25 @@ class PendaftaranController extends Controller
             "kebutuhan_khusus_ayah" => "required|string",
             "pekerjaan_ayah" => "required|string",
             "pendidikan_ayah" => "required|string",
-            "penghasilan_ayah" => "required|integer",
+            "penghasilan_ayah" => "required|string",
             // Orang tua (ibu)
             "nama_ibu" => "required|string",
             "tgl_lahir_ibu" => "required|date",
             "kebutuhan_khusus_ibu" => "required|string",
             "pekerjaan_ibu" => "required|string",
             "pendidikan_ibu" => "required|string",
-            "penghasilan_ibu" => "required|integer",
+            "penghasilan_ibu" => "required|string",
             // Orang tua (wali)
             "nama_wali" => "nullable|string",
             "tgl_lahir_wali" => "nullable|date",
             "kebutuhan_khusus_wali" => "nullable|string",
             "pekerjaan_wali" => "nullable|string",
             "pendidikan_wali" => "nullable|string",
-            "penghasilan_wali" => "nullable|integer",
+            "penghasilan_wali" => "nullable|string",
             // Data Periodik
             "tb" => "required|integer",
             "bb" => "required|integer",
-            "jarak_kesekolah" => "required|integer",
+            "jarak_kesekolah" => "required|string",
             "jarak_kesekolah_lainnya" => "required|integer",
             "waktu_kesekolah" => "nullable|integer",
             "waktu_kesekolah_lainnya" => "required|integer",
@@ -142,7 +142,7 @@ class PendaftaranController extends Controller
             Pendaftaran::create($data);
             return redirect()->route("success-index");
         } catch (\Exception $e) {
-            return back()->withErrors(["error" => $e->getMessage()]);
+            return back()->withInput()->withErrors(["error" => $e->getMessage()]);
         }
     }
 }

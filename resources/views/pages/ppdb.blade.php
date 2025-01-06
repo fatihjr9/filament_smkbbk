@@ -45,7 +45,7 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Nama Siswa</label>
-                            <input type="text" name="nama_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="nama_siswa" value="{{ old('nama_siswa') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('nama_siswa')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -66,8 +66,8 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Asal Sekolah</label>
                             <div class="grid grid-cols-2 gap-x-2">
-                                <input id="asal_sekolah_input" type="text" name="asal_sekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                                 <select id="asal_sekolah_select" name="asal_sekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                    <option selected>Pilih Asal Sekolah</option>
                                     <option value="MTS AL ADHAR CIKEUSAL">MTS AL ADHAR CIKEUSAL</option>
                                     <option value="MTS AL FALAH CIHAUR">MTS AL FALAH CIHAUR</option>
                                     <option value="MTS AL HIDAYAH BANJARHARJO">MTS AL HIDAYAH BANJARHARJO</option>
@@ -110,7 +110,15 @@
                                     <option value="SMP N 5 TANJUNG">SMP N 5 TANJUNG</option>
                                     <option value="SMP NU HASYIM ASY'ARI BANJARHARJO">SMP NU HASYIM ASY'ARI BANJARHARJO</option>
                                     <option value="SMP PONPES NURUL HAYAH KETANGGUNGAN">SMP PONPES NURUL HAYAH KETANGGUNGAN</option>
+                                    <option value="other">Tidak ada sekolah yang dipilih</option>
                                 </select>
+                                <div id="custom_school_input" class="hidden">
+                                    <input id="custom_school" 
+                                           type="text" 
+                                           name="custom_school" 
+                                           placeholder="Nama sekolah Anda" 
+                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                                </div>
                             </div>
                             @error('asal_sekolah')
                                 <div style="color: red;">Form ini belum terisi</div>
@@ -118,7 +126,7 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Alamat Asal Sekolah</label>
-                            <input type="text" name="alamat_asal_sekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="alamat_asal_sekolah" value="{{ old('alamat_asal_sekolah') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('alamat_asal_sekolah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -127,14 +135,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">NISN</label>
-                            <input type="text" min="0" name="nisn" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NISN" />
+                            <input type="text" min="0" name="nisn" value="{{ old('nisn') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NISN" />
                             @error('nisn')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">NIS</label>
-                            <input type="text" min="0" name="nis" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NIS" />
+                            <input type="text" min="0" name="nis" value="{{ old('nis') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NIS" />
                             @error('nis')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -143,14 +151,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Nomor Induk Kependudukan ( NIK )</label>
-                            <input type="text" min="0" name="nik" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NIK" />
+                            <input type="text" min="0" name="nik" value="{{ old('nik') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NIK" />
                             @error('nik')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">NPSN Sekolah Asal <span class="text-sm text-gray-400">( Diisikan dari jenjang sebelumnya )</span></label>
-                            <input type="text" min="0" name="npsn" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NPSN" />
+                            <input type="text" min="0" name="npsn" value="{{ old('npsn') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="No NPSN" />
                             @error('npsn')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -160,8 +168,8 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Tempat, Tanggal Lahir</label>
                             <div class="grid grid-cols-3 gap-x-2 items-center">
-                                <input type="text" name="tmpt_lahir_siswa" class="bg-gray-50 col-span-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Tempat Lahir" />
-                                <input type="date" name="tgl_lahir_siswa" class="bg-gray-50 col-span-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Tanggal Lahir Siswa" />
+                                <input type="text" name="tmpt_lahir_siswa" value="{{ old('tmpt_lahir_siswa') }}" class="bg-gray-50 col-span-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Tempat Lahir" />
+                                <input type="date" name="tgl_lahir_siswa" value="{{ old('tgl_lahir_siswa') }}" class="bg-gray-50 col-span-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Tanggal Lahir Siswa" />
                                 @error('tmpt_lahir_siswa')
                                     <div style="color: red;">Form ini belum terisi</div>
                                 @enderror
@@ -213,7 +221,7 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Alamat tempat tinggal</label>
-                            <input type="text" name="alamat_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="alamat_siswa" value="{{ old('alamat_siswa') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('alamat_siswa')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -222,7 +230,7 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Dusun</label>
-                            <input type="text" name="dusun" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="dusun" value="{{ old('dusun') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('dusun')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -230,11 +238,11 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">RT/RW</label>
                             <div class="grid grid-cols-2 gap-x-2 items-center">
-                                <input type="number" name="rt" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                                <input type="number" name="rt" value="{{ old('rt') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                                 @error('rt')
                                     <div style="color: red;">Form ini belum terisi</div>
                                 @enderror
-                                <input type="number" name="rw" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                                <input type="number" name="rw" value="{{ old('rw') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                                 @error('rw')
                                     <div style="color: red;">Form ini belum terisi</div>
                                 @enderror
@@ -244,14 +252,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Kelurahan/Desa</label>
-                            <input type="text" name="kelurahan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="kelurahan" value="{{ old('kelurahan') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('kelurahan')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Kode Pos</label>
-                            <input type="number" name="kodepos" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="number" name="kodepos" value="{{ old('kodepos') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('kodepos')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -260,14 +268,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Kecamatan</label>
-                            <input type="text" name="kecamatan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="kecamatan" value="{{ old('kecamatan') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('kecamatan')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Kabupaten/Kota</label>
-                            <input type="text" name="kota" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="kota" value="{{ old('kota') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('kota')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -276,7 +284,7 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Provinsi</label>
-                            <input type="text" name="provinsi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="provinsi" value="{{ old('provinsi') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('provinsi')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -316,11 +324,11 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">No Telp Rumah/ No Telp Hp</label>
                             <div class="grid grid-cols-2 gap-x-2 items-center">
-                                <input type="text" name="telp_rmh" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Masukkan no telp rumah" />
+                                <input type="text" name="telp_rmh" value="{{ old('telp_rmh') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Masukkan no telp rumah" />
                                 @error('telp_rmh')
                                     <div style="color: red;">Form ini belum terisi</div>
                                 @enderror
-                                <input type="text" name="telp_hp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Masukkan no telp hp" />
+                                <input type="text" name="telp_hp" value="{{ old('telp_hp') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Masukkan no telp hp" />
                                 @error('telp_hp')
                                     <div style="color: red;">Form ini belum terisi</div>
                                 @enderror
@@ -385,14 +393,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Nama Ayah</label>
-                            <input type="text" name="nama_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="nama_ayah" value="{{ old('nama_ayah') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('nama_ayah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Tanggal Lahir</label>
-                            <input type="date" name="tgl_lahir_ayah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="date" name="tgl_lahir_ayah" value="{{ old('tgl_lahir_ayah') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('tgl_lahir_ayah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -490,14 +498,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Nama Ibu</label>
-                            <input type="text" name="nama_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="text" name="nama_ibu" value="{{ old('nama_ibu') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('nama_ibu')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Tanggal Lahir</label>
-                            <input type="date" name="tgl_lahir_ibu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="date" name="tgl_lahir_ibu" value="{{ old('tgl_lahir_ibu') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('tgl_lahir_ibu')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -682,14 +690,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Tinggi Badan</label>
-                            <input type="number" name="tb" min="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="number" name="tb" value="{{ old('tb') }}" min="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('tb')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Berat Badan</label>
-                            <input type="number" name="bb" min="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="number" name="bb" value="{{ old('bb') }}" min="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('bb')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -699,7 +707,7 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Jarak Tempat ke sekolah</label>
                             <select name="jarak_kesekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
-                                <option value="Kurang Dari 1KM">Lebih Dari 1KM</option>
+                                <option selected value="Kurang Dari 1KM">Lebih Dari 1KM</option>
                                 <option value="Lebih Dari 1KM">Kurang Dari 1KM</option>
                             </select>
                             @error('jarak_kesekolah')
@@ -708,7 +716,7 @@
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Lebih Dari 1 km, sebutkan</label>
-                            <input type="number" min="0" name="jarak_kesekolah_lainnya" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="number" min="0" name="jarak_kesekolah_lainnya" value="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('jarak_kesekolah_lainnya')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -717,14 +725,14 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Waktu Tempuh Berangkat Sekolah</label>
-                            <input type="number" min="0" name="waktu_kesekolah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Contoh: 15 menit, 30 menit" />
+                            <input type="number" min="0" name="waktu_kesekolah" value="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Contoh: 15 menit, 30 menit" />
                             @error('waktu_kesekolah')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
                         </div>
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Lebih dari 60menit, sebutkan</label>
-                            <input type="number" min="0" name="waktu_kesekolah_lainnya" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
+                            <input type="number" min="0" name="waktu_kesekolah_lainnya" value="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" />
                             @error('waktu_kesekolah_lainnya')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -733,7 +741,7 @@
                     <section class="grid grid-cols-2 gap-x-4">
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Jumlah Saudara Kandung</label>
-                            <input type="number" min="0" name="saudara_kandung" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Contoh: 15 menit, 30 menit" />
+                            <input type="number" min="0" name="saudara_kandung" value="{{ old('saudara_kandung') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="Contoh: 15 menit, 30 menit" />
                             @error('saudara_kandung')
                                 <div style="color: red;">Form ini belum terisi</div>
                             @enderror
@@ -762,20 +770,15 @@
         </form>
     </div>
     <script>
-        const selectElement = document.getElementById('asal_sekolah_select');
-        const inputElement = document.getElementById('asal_sekolah_input');
+        const selectField = document.getElementById('asal_sekolah_select');
+    const customInputDiv = document.getElementById('custom_school_input');
 
-        selectElement.addEventListener('change', function () {
-            if (this.value === "") {
-                inputElement.classList.remove('hidden');
-                inputElement.required = true;
-                selectElement.name = "";
-            } else {
-                inputElement.classList.add('hidden');
-                inputElement.required = false;
-                inputElement.value = ""; // Kosongkan input manual
-                selectElement.name = "asal_sekolah"; // Set nama kembali ke select
-            }
-        });
+    selectField.addEventListener('change', function () {
+        if (this.value === 'other') {
+            customInputDiv.classList.remove('hidden');
+        } else {
+            customInputDiv.classList.add('hidden');
+        }
+    });
     </script>
 </x-client-layout>

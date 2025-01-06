@@ -1,4 +1,8 @@
 <x-filament-panels::page>
+    <x-filament::grid :default="2" class="gap-2 items-center" style="margin-top: 1rem;">
+        <p style="font-size: 1.5rem; font-weight:700;">Detail data {{ $record->nama_siswa }}</p>
+        <p style="margin-left: auto;">Unduh ke Excel</p>
+    </x-filament::grid>
     <x-filament::card>
         <h1 class="text-xl font-bold">Biodata Siswa</h1>
         <x-filament::grid :default="2" class="gap-2" style="margin-top: 1rem;">
@@ -43,7 +47,7 @@
             <p>Kebutuhan Khusus: {{ $record->kebutuhan_khusus_ayah }}</p>
             <p>Pekerjaan: {{ $record->pekerjaan_ayah }}</p>
             <p>Pendidikan: {{ $record->pendidikan_ayah }}</p>
-            <p>Penghasilan: Rp {{ number_format($record->penghasilan_ayah, 0, ',', '.') }}</p>
+            <p>Penghasilan: {{ $record->penghasilan_ayah }}</p>
         </x-filament::grid>
     </x-filament::card>
 
@@ -55,7 +59,7 @@
             <p>Kebutuhan Khusus: {{ $record->kebutuhan_khusus_ibu }}</p>
             <p>Pekerjaan: {{ $record->pekerjaan_ibu }}</p>
             <p>Pendidikan: {{ $record->pendidikan_ibu }}</p>
-            <p>Penghasilan: Rp {{ number_format($record->penghasilan_ibu, 0, ',', '.') }}</p>
+            <p>Penghasilan: {{ $record->penghasilan_ibu }}</p>
         </x-filament::grid>
     </x-filament::card>
 
@@ -67,7 +71,7 @@
             <p>Kebutuhan Khusus: {{ $record->kebutuhan_khusus_wali }}</p>
             <p>Pekerjaan: {{ $record->pekerjaan_wali }}</p>
             <p>Pendidikan: {{ $record->pendidikan_wali }}</p>
-            <p>Penghasilan: Rp {{ number_format($record->penghasilan_wali, 0, ',', '.') }}</p>
+            <p>Penghasilan: {{ $record->penghasilan_walis }}</p>
         </x-filament::grid>
     </x-filament::card>
 

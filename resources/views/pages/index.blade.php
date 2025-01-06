@@ -42,7 +42,7 @@
             @endif
         </div>
     </div>
-    <section class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 mt-[62rem] md:mt-[56rem] mb-40" id="berita">
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 mt-[62rem] md:mt-[56rem] mb-40">
         <div class="flex flex-col space-y-1 mb-6 md:mb-0">
             <h5 class="text-3xl font-bold">Fasilitas Sekolah Kami</h5>
             <p class="text-lg font-medium text-gray-500">Kami memiliki fasilitas sekolah terbaik <br class="hidden md:block"/> dan menjadi kebanggaan sekolah kami.</p>
@@ -65,7 +65,7 @@
             <p class="text-lg font-medium text-center text-gray-500">Kami memiliki kegiatan ekstrakulikuler yang terbaik dan berprestasi</p>
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-3">
-            @foreach($fasilitas as $f)
+            @foreach($eskul as $f)
                 <div class="relative flex flex-col h-fit rounded-xl overflow-hidden group border">
                     <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 z-10 group-hover:from-red-600/50 group-hover:to-transparent transition-all duration-500"></div>
                     <img class="w-full object-cover h-96 group-hover:scale-110 transition-all duration-1000 rounded-xl" src="{{ asset('storage/' . $f->foto) }}" alt="Gambar {{ $f->nama }}"/>
