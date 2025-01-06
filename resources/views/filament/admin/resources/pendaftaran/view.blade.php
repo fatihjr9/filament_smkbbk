@@ -1,7 +1,7 @@
 <x-filament-panels::page>
     <x-filament::grid :default="2" class="gap-2 items-center" style="margin-top: 1rem;">
         <p style="font-size: 1.5rem; font-weight:700;">Detail data {{ $record->nama_siswa }}</p>
-        <p style="margin-left: auto;">Unduh ke Excel</p>
+        <a href="{{ route('pendaftaran.export', $record->id) }}">Unduh ke Excel</a>
     </x-filament::grid>
     <x-filament::card>
         <h1 class="text-xl font-bold">Biodata Siswa</h1>
@@ -14,6 +14,8 @@
             <p>Tempat Tanggal Lahir: {{ $record->tmpt_lahir_siswa }}, {{ \Carbon\Carbon::parse($record->tgl_lahir_siswa)->locale('id')->translatedFormat('l, d F Y') }}</p>
             <p>Agama: {{ $record->agama }}</p>
             <p>Kebutuhan Khusus Siswa: {{ $record->kebutuhan_khusus_siswa }}</p>
+            <p>Asal Sekolah: {{ $record->asal_sekolah }}</p>
+            <p>Alamat Asal Sekolah: {{ $record->alamat_asal_sekolah }}</p>
             <p>Alamat: {{ $record->alamat_siswa }}</p>
             <p>Dusun: {{ $record->dusun }}</p>
             <p>RT/RW: {{ $record->rt }}/{{ $record->rw }}</p>

@@ -614,6 +614,7 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Berkebutuhan Khusus</label>
                             <select name="kebutuhan_khusus_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option selected value=""></option>
                                 <option value="Tidak">Tidak</option>
                                 <option value="Netra (A)">Netra (A)</option>
                                 <option value="Rungu (B)">Rungu (B)</option>
@@ -636,6 +637,7 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pekerjaan</label>
                             <select name="pekerjaan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option selected value=""></option>
                                 <option value="tidak-bekerja">Tidak bekerja</option>
                                 <option value="nelayan">Nelayan</option>
                                 <option value="petani">Petani</option>
@@ -656,6 +658,7 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Pendidikan Terakhir</label>
                             <select name="pendidikan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option selected value=""></option>
                                 <option value="tidak-sekolah">Tidak sekolah</option>
                                 <option value="putus-sd">Putus SD</option>
                                 <option value="sd-sederajat">SD Sederajat</option>
@@ -672,6 +675,7 @@
                         <div>
                             <label class="block mb-1 text-md font-medium text-gray-900">Penghasilan</label>
                             <select name="penghasilan_wali" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5">
+                                <option selected value=""></option>
                                 <option value="<500000">< Rp. 500.000</option>
                                 <option value="500000-999999">Rp. 500.000 - Rp. 999.999</option>
                                 <option value="1000000-1999999">Rp. 1.000.000 - Rp. 1.999.999</option>

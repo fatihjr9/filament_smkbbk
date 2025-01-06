@@ -3,6 +3,9 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PendaftaranController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Pendaftaran;
+use App\Exports\PendaftaranExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 Route::get("/", [ClientController::class, "heroContent"])->name("home");
 Route::get("/template", function () {
@@ -50,3 +53,8 @@ Route::get("/pendaftaran/download/{id}", [
     PendaftaranController::class,
     "downloadRegistration",
 ])->name("ppdb-download");
+
+Route::get('/pendaftaran/{id}/export', function ($id) {
+    $pendaftaran = Pendaftaran::findOrFail($id);
+    return Excel::download(new PendaftaranExport($pendaftaran), 'pendaftaran.xlsx');
+})->name('pendaftaran.export');
